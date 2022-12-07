@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/screens/ColumnsScreen.dart';
+import 'package:flutter_project/screens/RowsScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,13 +41,39 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title:Text("Home Screen"),
       ),
-      body: InkWell(
-        onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>ColumnScreen(),
+      body: Column(
+        children: [
+          ListTile(
+            title: Text("Columns(Arsenal)"),
+            leading: Icon(Icons.view_column_outlined),
+            trailing: Icon(Icons.chevron_right),
+            subtitle: Text("first subtitle about (Arsenal)columns"),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ColumnScreen(),
+              ),
+              );
+            },
           ),
-          );
-        },
-        child: Text("Columns"),
+          ListTile(
+            title: Text("Rows(united)"),
+            leading: Icon(Icons.table_rows_outlined),
+            trailing: Icon(Icons.chevron_right),
+            subtitle: Text("first subtitle about united(rows)"),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>RowScreen(),
+              ),
+              );
+            },
+          ),
+          /* InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ColumnScreen(),
+              ),
+              );
+            },
+            child: Text("Columns"),
+          )*/
+        ],
       ),
     );
   }
