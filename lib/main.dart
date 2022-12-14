@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/screens/ColumnsScreen.dart';
+import 'package:flutter_project/screens/ContainerDecorationScreeen.dart';
+import 'package:flutter_project/screens/ContainerScreen.dart';
+import 'package:flutter_project/screens/ImageScreen.dart';
 import 'package:flutter_project/screens/RowsScreen.dart';
+import 'package:flutter_project/screens/TextDecoration.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title:Text("Home Screen"),
       ),
-      body: Column(
+      body: ListView(
         children: [
           ListTile(
             title: Text("Columns(Arsenal)"),
@@ -65,14 +69,62 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-          /* InkWell(
+          ListTile(
+            title: Text("Container(Liverpool)"),
+            leading: Icon(Icons.check_box_outline_blank),
+            trailing: Icon(Icons.chevron_right),
+            subtitle: Text("first subtitle about (liverpool)cotainer"),
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>ColumnScreen(),
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ContainerScreen(),
               ),
               );
             },
-            child: Text("Columns"),
-          )*/
+          ),
+          ListTile(
+            title: Text("Container(Liverpool)"),
+            leading: Icon(Icons.check_box_outline_blank),
+            trailing: Icon(Icons.chevron_right),
+            subtitle: Text("first subtitle about (liverpool)cotainer"),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ContainerScreen(),
+              ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text("Images(Mancity)"),
+            leading: Icon(Icons.photo_size_select_actual_outlined),
+            trailing: Icon(Icons.chevron_right),
+            subtitle: Text("first subtitle about (Mancity)images"),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ImageScreen(),
+              ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text("Text Styling"),
+            leading: Icon(Icons.text_fields_outlined),
+            trailing: Icon(Icons.chevron_right),
+            subtitle: Text("Text Decoration..."),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>TextDecorationScreen(),
+              ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text("Container Styling"),
+            leading: Icon(Icons.deblur_outlined),
+            trailing: Icon(Icons.chevron_right),
+            subtitle: Text("Container Decoration..."),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ContainerDecorationScreen(),
+              ),
+              );
+            },
+          ),
+
         ],
       ),
     );
